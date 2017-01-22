@@ -1,0 +1,191 @@
+/*******************************
+Photo Gallery Project
+
+Author: Brent Suggs
+February 29th, 2016
+*******************************/
+
+
+* {
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    font-size: 16px; 
+    font-family: 'Comfortaa', cursive;
+    letter-spacing: 1px;
+}
+
+body {
+    margin-top: 95px;
+    background-color: #E9E9E9;
+}
+
+.wrap {
+    width: 80%; 
+    max-width: 980px; 
+    margin: 0 auto; 
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+header {
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    text-align: center;
+    padding: 25px 0; 
+    background-color: white;
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.3)
+}
+
+img {
+    width: 100%;
+    border-radius: 3px;
+}
+
+/**********************
+    LIGHTBOX
+**********************/ 
+
+#overlay {
+    background: rgba(0,0,0,.9); 
+    width: 100vw; 
+    height: 100vh; 
+    position: fixed;
+    top: 0; 
+    display: none; 
+    text-align: center; 
+}
+
+#overlay img {
+    margin-top: 20%;   
+}
+
+
+#overlay p {
+    width: 80%;
+    max-width: 600px; 
+    min-height: 5em;
+    color: white;
+    text-align: left;
+    font-size: 1.25em; 
+}
+
+
+#navContainer {
+    margin-top: -25px;
+}
+
+#navLeft,
+#navRight,
+#navClose {
+    color: white; 
+    cursor: pointer; 
+    display: inline-block;
+    font-size: 1em;   
+}
+
+#navLeft,
+#navRight {
+    width: 20%;
+}
+
+#navClose {
+    width: 60%;
+}
+
+
+/**********************
+    SEARCH BAR
+**********************/ 
+
+#search {
+    width: 80%; 
+    max-width: 460px;
+    height: 2.25em;
+    border-radius: 3px;
+    border: 2px solid #D5D5D5;
+	padding-left: 10px;
+	font-size: 1em;
+}
+
+#search:focus {
+    border: 2px solid #B5B5B5; 
+    outline: none; 
+}
+
+/**********************
+    GALLERY
+**********************/ 
+
+#gallery {
+    list-style: none; 
+    padding-left: 0; 
+}
+
+
+li.gallery-item {
+    margin: 0 0 60px 0; 
+}
+
+.gallery-item img {
+    box-shadow: 0 2px 1px 1px rgba(0,0,0,.4)
+}
+
+
+/**********************
+    MEDIA QUERIES
+**********************/ 
+
+@media screen and (min-width: 480px) {
+    
+    li.gallery-item {
+        float: left; 
+        margin: 0 60px 60px 0; 
+    }
+    
+    li.gallery-item:nth-child(2n+2) {
+        margin-right: 0; 
+    }
+    
+    
+}
+
+@media screen and (min-width: 780px) {
+    
+
+    li.gallery-item:nth-child(2n+2) {
+        margin-right: 60px;
+    }
+    
+    li.gallery-item:nth-child(3n+3) {
+        margin-right: 0;
+    }
+    
+    #overlay img {
+        margin-top: 5%;   
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    
+
+    li.gallery-item:nth-child(3n+3) {
+        margin-right: 60px;
+    }
+
+    li.gallery-item:nth-child(4n+4) {
+        margin-right: 0;
+    }
+    
+    #overlay img {
+        margin-top: 2.5%;   
+    }
+}
